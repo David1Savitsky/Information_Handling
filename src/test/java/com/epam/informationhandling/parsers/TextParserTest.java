@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 public class TextParserTest {
 
@@ -16,14 +17,14 @@ public class TextParserTest {
     private static final Composite FIRST_SENTENCE_COMPOSITE = new Composite(Arrays.asList(
             Lexeme.makeWord("Believe me"), Lexeme.makeWord("me.")
     ));
-    private static final Composite SECOND_SENTENCE_COMPOSITE = new Composite(Arrays.asList(Lexeme.makeWord("Yea.")));
+    private static final Composite SECOND_SENTENCE_COMPOSITE = new Composite(Collections.singletonList(Lexeme.makeWord("Yea.")));
     private static final Composite THIRD_SENTENCE_COMPOSITE = new Composite(Arrays.asList(
             Lexeme.makeWord("As"), Lexeme.makeWord("soon"), Lexeme.makeWord("as"), Lexeme.makeWord("possible.")
     ));
     private static final Composite FIRST_PARAGRAPH_COMPOSITE = new Composite(Arrays.asList(
             FIRST_SENTENCE_COMPOSITE, SECOND_SENTENCE_COMPOSITE
     ));
-    private static final Composite SECOND_PARAGRAPH_COMPOSITE = new Composite(Arrays.asList(THIRD_SENTENCE_COMPOSITE));
+    private static final Composite SECOND_PARAGRAPH_COMPOSITE = new Composite(Collections.singletonList(THIRD_SENTENCE_COMPOSITE));
     private static final Composite EXPECTED_TEXT_COMPOSITE = new Composite(Arrays.asList(
             FIRST_PARAGRAPH_COMPOSITE, SECOND_PARAGRAPH_COMPOSITE
     ));

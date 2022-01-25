@@ -5,6 +5,10 @@ import java.util.List;
 
 public class Lexeme implements Component{
 
+    public String getValue() {
+        return value;
+    }
+
     private final String value;
     private final LexemeType type;
 

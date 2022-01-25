@@ -1,5 +1,8 @@
 package com.epam.informationhandling.logic.calculation;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -9,6 +12,8 @@ public class Calculator {
     private final List<AbstractMathExpression> expressionList = new ArrayList<>();
 
     private static final String LEXEME_DELIMITER = " ";
+
+    private static final Logger LOGGER = LogManager.getLogger();
 
     public Integer calculate(String expression) {
         String[] lexemes = expression.split(LEXEME_DELIMITER);
@@ -36,7 +41,9 @@ public class Calculator {
                     }
             }
         }
-        return finishCalculation();
+        Integer finalValue = finishCalculation();
+        LOGGER.info("Calculated " + expression + "Answer: " + finalValue);
+        return finalValue;
     }
 
     private boolean addIntegerToExpression(String lexeme) {

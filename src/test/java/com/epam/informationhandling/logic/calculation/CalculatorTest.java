@@ -1,4 +1,4 @@
-package com.epam.informationhandling.logic;
+package com.epam.informationhandling.logic.calculation;
 
 import com.epam.informationhandling.logic.calculation.Calculator;
 import org.junit.Assert;

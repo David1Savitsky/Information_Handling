@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 public class ParagraphParserTest {
 
@@ -18,8 +19,8 @@ public class ParagraphParserTest {
     private static final Composite FIRST_SENTENCE_COMPOSITE = new Composite(Arrays.asList(
             Lexeme.makeWord("He"), Lexeme.makeWord("wakes"), Lexeme.makeWord("up...")
     ));
-    private static final Composite SECOND_SENTENCE_COMPOSITE = new Composite(Arrays.asList(Lexeme.makeWord("Wow!")));
-    private static final Composite THIRD_SENTENCE_COMPOSITE = new Composite(Arrays.asList(Lexeme.makeWord("Hurray?")));
+    private static final Composite SECOND_SENTENCE_COMPOSITE = new Composite(Collections.singletonList(Lexeme.makeWord("Wow!")));
+    private static final Composite THIRD_SENTENCE_COMPOSITE = new Composite(Collections.singletonList(Lexeme.makeWord("Hurray?")));
     private static final Composite FOURTH_SENTENCE_COMPOSITE = new Composite(Arrays.asList(
             Lexeme.makeWord("Hello,"), Lexeme.makeWord("men.")
     ));
